@@ -1,1 +1,54 @@
-<p>products-page works!</p>
+<h2>Product component</h2>
+<div class="page">
+  <section class="products">
+    <div class="products__content">
+      <ul class="products__list products-list" *ngIf="products.length; else loading">
+        <li *ngFor="let product of products; let index = index" class="products-list__item">
+          <span>{{ product.productId }}</span>
+          <b>{{ product.name }}</b>
+          <i>{{ product.status }}</i>
+          <button (click)="getId(product.productId)">id</button>
+          <button (click)="removeById(product.productId)">remove</button>
+          <label [for]="product.productId">
+            <input [id]="product.productId" name="product" type="radio" [value]="product" [(ngModel)]="selectedProduct">
+          </label>
+        </li>
+      </ul>
+      <ng-template #loading>
+        <p>loading...</p>
+      </ng-template>
+      <div class="products__edit">
+        <h2>Edit Product</h2>
+        <form action="" class="product__form edit-form" [formGroup]="editProductForm" (ngSubmit)="editProduct(selectedProduct)">
+          <div class="edit-form__control">
+            <label for="editName">Name: </label>
+            <input id="editName" type="text" formControlName="name">
+          </div>
+          <div class="edit-form__control">
+            <label for="editStatus">Status: </label>
+            <input id="editStatus" type="text" formControlName="status">
+          </div>
+          <div class="form-action">
+            <button type="submit" [disabled]="editProductForm.invalid || !selectedProduct">edit</button>
+          </div>
+        </form>
+      </div>
+      <div class="products__add">
+        <h2>Add New Product</h2>
+        <form action="" class="product__form edit-form" [formGroup]="addProductForm" (ngSubmit)="addProduct()">
+          <div class="edit-form__control">
+            <label for="addName">Name: </label>
+            <input id="addName" type="text" formControlName="name">
+          </div>
+          <div class="edit-form__control">
+            <label for="addStatus">Status: </label>
+            <input id="addStatus" type="text" formControlName="status">
+          </div>
+          <div class="form-action">
+            <button type="submit" [disabled]="addProductForm.invalid">add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
