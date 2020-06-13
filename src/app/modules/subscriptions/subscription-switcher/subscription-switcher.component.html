@@ -1,0 +1,9 @@
+<section class="subscriptions">
+  <label for="subs">Subscription switcher: </label>
+  <select name="subs" id="subs" *ngIf="subscriptions.length; else loading" (change)="onChangeSubscription($event)">
+    <option *ngFor="let sub of subscriptions" [value]="sub.name">{{ sub.name }}</option>
+  </select>
+  <ng-template #loading>
+    <p>Loading...</p>
+  </ng-template>
+</section>
