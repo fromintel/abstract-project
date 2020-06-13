@@ -2,72 +2,46 @@ import { Injectable } from '@angular/core';
 import { Product } from '../../models/product';
 import { Observable, of } from 'rxjs';
 import { delay, tap } from 'rxjs/operators';
+import { AppStore } from '../../store/app-store';
 
 @Injectable()
 export class ProductsService {
 
   constructor() {}
 
-  private productsList: Product[] = [
-    {
-      name: 'product 1',
-      dateCreated: '11.06.20',
-      dateModified: '12.06.20',
-      status: 'available',
-      productId: '123qwerty',
-      orgId: '1234org',
-      subscriptionId: '1234sub',
-    },
-    {
-      name: 'product 2',
-      dateCreated: '11.06.20',
-      dateModified: '12.06.20',
-      status: 'none',
-      productId: '123qwerty123',
-      orgId: '1234org',
-      subscriptionId: '1234sub',
-    },
-    {
-      name: 'product 3',
-      dateCreated: '11.06.20',
-      dateModified: '12.06.20',
-      status: 'available',
-      productId: '123qwerty321',
-      orgId: '1234org',
-      subscriptionId: '1234sub',
-    }
-  ];
-
   public getProducts(): Observable<Product[]> {
-    return of<Product[]>(this.productsList).pipe(delay(500));
+    return of<Product[]>(AppStore.storeEntity.products).pipe(delay(800));
   }
 
-  public getProductById(productId: string): Observable<Product> {
-    const product: Product = this.productsList.find((product: Product) => productId === product.productId);
-    return of<Product>(product).pipe(delay(700));
+  public getProductsBySubId(subId: string): Observable<Product[]> {
+    const productsList = AppStore.storeEntity.products.filter((product: Product) => product.subId === subId);
+    return of<Product[]>(productsList).pipe(delay(300));
+  }
+
+  public getProductsByOrgId(orgId: string): Observable<Product[]> {
+    const productsList = AppStore.storeEntity.products.filter((product: Product) => product.orgId === orgId);
+    return of<Product[]>(productsList).pipe(delay(300));
   }
 
   public addProduct(product: Product): Observable<Product[]> {
-    const newProductList: Product[] = [...this.productsList];
-    newProductList.push(product);
-    this.productsList = [...newProductList];
-    return of(this.productsList).pipe(delay(300));
-  }
-
-  public deleteProductById(productId: string): Observable<Product[]> {
-    const newProductsList = this.productsList.filter((item: Product) => item.productId !== productId);
-    this.productsList = [...newProductsList];
-    return of(this.productsList).pipe(delay(600));
+    AppStore.storeEntity.products.push(product);
+    return of<Product[]>(AppStore.storeEntity.products).pipe(delay(300));
   }
 
   public editProductById(productId: string, editedData: Product): Observable<Product[]> {
-    const productsList: Product[] = [...this.productsList];
-    const selectedProductIndex = productsList.findIndex((product: Product) => product.productId === productId);
+    const productsList: Product[] = AppStore.storeEntity.products;
+    const selectedProductIndex = productsList.findIndex((product: Product) => product.id === productId);
     productsList.splice(selectedProductIndex, 1, editedData);
     return of<Product[]>(productsList).pipe(
-      tap(() => this.productsList = productsList),
+      tap(() => AppStore.storeEntity.products = productsList),
       delay(700)
     );
+  }
+
+  public deleteProductById(productId: string): Observable<Product[]> {
+    const newProductsList = AppStore.storeEntity.products.filter((item: Product) => item.id !== productId);
+    AppStore.storeEntity.products = [...newProductsList];
+    return of(AppStore.storeEntity.products).pipe(delay(600));
   }
 
 }
