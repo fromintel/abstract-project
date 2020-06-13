@@ -23,25 +23,35 @@ export class ProductsService {
     return of<Product[]>(productsList).pipe(delay(300));
   }
 
-  public addProduct(product: Product): Observable<Product[]> {
+  public addProduct(product: Product, currentProductList: Product[]): Observable<Product[]> {
     AppStore.storeEntity.products.push(product);
-    return of<Product[]>(AppStore.storeEntity.products).pipe(delay(300));
+    const currentOrg = currentProductList[0].orgId;
+    const isGlobalProductList = AppStore.storeEntity.products.length === currentProductList.length;
+    return of<Product[]>(currentProductList).pipe(
+      tap(() => {
+        if (currentOrg === product.orgId && !isGlobalProductList) {
+          currentProductList.push(product);
+        }
+      }),
+      delay(300),
+    );
   }
 
-  public editProductById(productId: string, editedData: Product): Observable<Product[]> {
-    const productsList: Product[] = AppStore.storeEntity.products;
-    const selectedProductIndex = productsList.findIndex((product: Product) => product.id === productId);
-    productsList.splice(selectedProductIndex, 1, editedData);
-    return of<Product[]>(productsList).pipe(
-      tap(() => AppStore.storeEntity.products = productsList),
+  public editProductById(productId: string, editedData: Product, currentProductsList: Product[]): Observable<Product[]> {
+    const selectedProductIndex = currentProductsList.findIndex((product: Product) => product.id === productId);
+    currentProductsList.splice(selectedProductIndex, 1, editedData);
+    return of<Product[]>(currentProductsList).pipe(
+      tap(() => AppStore.storeEntity.products.splice(selectedProductIndex, 1, editedData)),
       delay(700)
     );
   }
 
-  public deleteProductById(productId: string): Observable<Product[]> {
-    const newProductsList = AppStore.storeEntity.products.filter((item: Product) => item.id !== productId);
-    AppStore.storeEntity.products = [...newProductsList];
-    return of(AppStore.storeEntity.products).pipe(delay(600));
+  public deleteProductById(productId: string, currentProductsList: Product[]): Observable<Product[]> {
+    const newProductsList = currentProductsList.filter((item: Product) => item.id !== productId);
+    return of<Product[]>(newProductsList).pipe(
+      tap(() => AppStore.storeEntity.products = AppStore.storeEntity.products.filter((item: Product) => item.id !== productId)),
+      delay(600)
+    );
   }
 
 }
