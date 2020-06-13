@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OrganizationsPageComponent } from './organizations-page/organizations-page.component';
 import { OrganizationsService } from '../../services/organizations/organizations.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -10,7 +10,8 @@ import { FormsModule } from '@angular/forms';
   declarations: [OrganizationsPageComponent],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     OrganizationsPageComponent
