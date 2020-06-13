@@ -1,7 +1,7 @@
 <div class="organizations-container" *ngIf="organizations.length; else loading">
   <label for="orgs">Organizations switcher: </label>
   <select name="organizations" id="orgs" (change)="selectOrganization($event)">
-    <option *ngFor="let org of organizations; let i = index" [value]="org.name">{{ org.name}}</option>
+    <option [selected]="org.id === selectedOrganization.id" *ngFor="let org of organizations; let i = index" [value]="org.name">{{ org.name}}</option>
   </select>
 </div>
 <ng-template #loading>
