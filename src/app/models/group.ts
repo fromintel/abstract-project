@@ -1,4 +1,4 @@
-export interface Subscription {
+export interface Group {
   id: string;
   name: string;
 }

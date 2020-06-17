@@ -13,8 +13,8 @@ export class ProductsService {
     return of<Product[]>(AppStore.storeEntity.products).pipe(delay(800));
   }
 
-  public getBySubscriptionId(id: string): Observable<Product[]> {
-    const productsList = AppStore.storeEntity.products.filter((product: Product) => product.subId === id);
+  public getByGroupId(id: string): Observable<Product[]> {
+    const productsList = AppStore.storeEntity.products.filter((product: Product) => product.groupId === id);
     return of<Product[]>(productsList).pipe(delay(300));
   }
 

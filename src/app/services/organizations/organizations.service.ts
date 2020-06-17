@@ -13,13 +13,13 @@ export class OrganizationsService {
     return of<Organization[]>(AppStore.storeEntity.organizations).pipe(delay(800));
   }
 
-  public create(organization: Organization): Observable<Organization[]> {
+  public create(organization: Organization): Observable<void> {
     AppStore.storeEntity.organizations.push(organization);
-    return of<Organization[]>(AppStore.storeEntity.organizations).pipe(delay(300),);
+    return of<void>().pipe(delay(300));
   }
 
-  public getBySubscriptionId(id: string): Observable<Organization[]> {
-    const organizations = AppStore.storeEntity.organizations.filter((org: Organization) => org.subId === id);
+  public getByGroupId(id: string): Observable<Organization[]> {
+    const organizations = AppStore.storeEntity.organizations.filter((org: Organization) => org.groupId === id);
     return of<Organization[]>(organizations).pipe(delay(500));
   }
 

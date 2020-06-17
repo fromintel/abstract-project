@@ -5,14 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductsModule } from './modules/products/products.module';
 import { OrganizationsModule } from './modules/organizations/organizations.module';
-import { SubscriptionSwitcherComponent } from './modules/subscriptions/subscription-switcher/subscription-switcher.component';
-import { SubscriptionsService } from './services/subscriptions/subscriptions.service';
+import { GroupsService } from './services/groups/groups.service';
 import { FormsModule } from '@angular/forms';
+import { GroupsSwitcherComponent } from './modules/groups/groups-switcher/groups-switcher.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SubscriptionSwitcherComponent
+    GroupsSwitcherComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     OrganizationsModule,
     FormsModule
   ],
-  providers: [SubscriptionsService],
+  providers: [GroupsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
