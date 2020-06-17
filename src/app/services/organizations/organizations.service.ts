@@ -9,17 +9,17 @@ export class OrganizationsService {
 
   constructor() {}
 
-  public getOrganizations(): Observable<Organization[]> {
+  public getAll(): Observable<Organization[]> {
     return of<Organization[]>(AppStore.storeEntity.organizations).pipe(delay(800));
   }
 
-  public addOrg(org: Organization): Observable<Organization[]> {
-    AppStore.storeEntity.organizations.push(org);
+  public create(organization: Organization): Observable<Organization[]> {
+    AppStore.storeEntity.organizations.push(organization);
     return of<Organization[]>(AppStore.storeEntity.organizations).pipe(delay(300),);
   }
 
-  public getOrganizationsBySubId(subId: string): Observable<Organization[]> {
-    const organizations = AppStore.storeEntity.organizations.filter((org: Organization) => org.subId === subId);
+  public getBySubscriptionId(id: string): Observable<Organization[]> {
+    const organizations = AppStore.storeEntity.organizations.filter((org: Organization) => org.subId === id);
     return of<Organization[]>(organizations).pipe(delay(500));
   }
 

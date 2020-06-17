@@ -2,18 +2,18 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { AppStore } from '../../store/app-store';
 import { delay } from 'rxjs/operators';
-import { ISubscription } from '../../models/subscription';
+import { Subscription } from '../../models/subscription';
 
 @Injectable()
 export class SubscriptionsService {
 
-  public getSubscriptions(): Observable<ISubscription[]> {
-    return of<ISubscription[]>(AppStore.storeEntity.subscriptions).pipe(delay(800));
+  public getAll(): Observable<Subscription[]> {
+    return of<Subscription[]>(AppStore.storeEntity.subscriptions).pipe(delay(800));
   }
 
-  public getSubscriptionId(subId: string): Observable<ISubscription> {
-    const sub = AppStore.storeEntity.subscriptions.find((sub: ISubscription) => sub.id === subId);
-    return of<ISubscription>(sub).pipe(delay(500));
+  public getById(id: string): Observable<Subscription> {
+    const subscription = AppStore.storeEntity.subscriptions.find((s: Subscription) => s.id === id);
+    return of<Subscription>(subscription).pipe(delay(500));
   }
 
 }

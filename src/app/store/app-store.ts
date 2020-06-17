@@ -5,172 +5,142 @@ export class AppStore {
   private static store: Store = {
     subscriptions: [
       {
-        id: 'subAll',
-        name: 'All subscriptions'
-      },
-      {
-        id: 'sub1',
+        id: 'e97a48eb-3fc3-4826-b638-dfb0b178eaaf',
         name: 'subscription1'
       },
       {
-        id: 'sub2',
+        id: '60a82ad3-d1b9-4a49-b6a4-cbce5105280a',
         name: 'subscription2'
       },
     ],
     organizations: [
       {
-        id: 'orgAll',
-        subId: 'subAll',
-        name: 'All organization',
-        status: 'pending',
-        dateCreated: '11.06.20',
-        dateModified: '12.06.20',
-      },
-      {
-        id: 'org1',
-        subId: 'sub1',
+        id: '4e5f552a-8f61-4d08-a527-60b52e22474e',
+        subId: 'e97a48eb-3fc3-4826-b638-dfb0b178eaaf',
         name: 'organization 1',
         status: 'pending',
-        dateCreated: '11.06.20',
-        dateModified: '12.06.20',
+        dateCreated: '2020-06-01T12:18:29.208+0000',
+        dateModified: '2020-06-01T12:18:29.208+0000',
       },
       {
-        id: 'org2',
-        subId: 'sub2',
+        id: '9cdbb280-88d3-4924-913c-e214cd581765',
+        subId: '60a82ad3-d1b9-4a49-b6a4-cbce5105280a',
         name: 'organization 2',
         status: 'pending',
-        dateCreated: '11.06.20',
-        dateModified: '12.06.20',
+        dateCreated: '2020-06-01T12:18:29.208+0000',
+        dateModified: '2020-06-01T12:18:29.208+0000',
       },
       {
-        id: 'org3',
-        subId: 'sub2',
+        id: '1e55b13b-908b-4fc5-b1a9-28b96adfdd4b',
+        subId: '60a82ad3-d1b9-4a49-b6a4-cbce5105280a',
         name: 'organization 3',
         status: 'pending',
-        dateCreated: '11.06.20',
-        dateModified: '12.06.20',
+        dateCreated: '2020-06-01T12:18:29.208+0000',
+        dateModified: '2020-06-01T12:18:29.208+0000',
       },
       {
-        id: 'org4',
-        subId: 'sub1',
+        id: 'b3dc3fc6-13ec-48cd-b587-4f96cf1a0bca',
+        subId: 'e97a48eb-3fc3-4826-b638-dfb0b178eaaf',
         name: 'organization 4',
         status: 'pending',
-        dateCreated: '11.06.20',
-        dateModified: '12.06.20',
+        dateCreated: '2020-06-01T12:18:29.208+0000',
+        dateModified: '2020-06-01T12:18:29.208+0000',
       },
       {
-        id: 'org5',
-        subId: 'sub1',
+        id: '1abf90d8-63cb-476d-a87c-c7ce2f8e4163',
+        subId: 'e97a48eb-3fc3-4826-b638-dfb0b178eaaf',
         name: 'organization 5',
         status: 'pending',
-        dateCreated: '11.06.20',
-        dateModified: '12.06.20',
+        dateCreated: '2020-06-01T12:18:29.208+0000',
+        dateModified: '2020-06-01T12:18:29.208+0000',
       }
     ],
     products: [
       {
-        id: 'prd1',
-        subId: 'sub1',
-        orgId: 'org1',
+        id: 'd7ca3c78-b1d2-4aad-b793-c900a6a3c459',
+        subId: 'e97a48eb-3fc3-4826-b638-dfb0b178eaaf',
+        orgId: '4e5f552a-8f61-4d08-a527-60b52e22474e',
         name: 'product 1',
         status: 'available',
-        dateCreated: '11.06.20',
-        dateModified: '12.06.20',
+        dateCreated: '2020-06-01T12:18:29.208+0000',
+        dateModified: '2020-06-01T12:18:29.208+0000',
       },
       {
-        id: 'prd2',
-        subId: 'sub1',
-        orgId: 'org4',
+        id: '361f2f37-75de-484e-a0e4-2efe9f7b74fb',
+        subId: 'e97a48eb-3fc3-4826-b638-dfb0b178eaaf',
+        orgId: 'b3dc3fc6-13ec-48cd-b587-4f96cf1a0bca',
         name: 'product 2',
         status: 'available',
-        dateCreated: '11.06.20',
-        dateModified: '12.06.20',
+        dateCreated: '2020-06-01T12:18:29.208+0000',
+        dateModified: '2020-06-01T12:18:29.208+0000',
       },
       {
-        id: 'prd3',
-        subId: 'sub4',
-        orgId: 'org1',
+        id: 'f0ab7bdd-81d0-4029-bb2e-23fe6c45a802',
+        subId: 'e97a48eb-3fc3-4826-b638-dfb0b178eaaf',
+        orgId: '4e5f552a-8f61-4d08-a527-60b52e22474e',
         name: 'product 3',
         status: 'available',
-        dateCreated: '11.06.20',
-        dateModified: '12.06.20',
+        dateCreated: '2020-06-01T12:18:29.208+0000',
+        dateModified: '2020-06-01T12:18:29.208+0000',
       },
       {
-        id: 'prd4',
-        subId: 'sub2',
-        orgId: 'org2',
+        id: '03dce804-f931-46ac-bccd-c380a6d2c618',
+        subId: '60a82ad3-d1b9-4a49-b6a4-cbce5105280a',
+        orgId: '9cdbb280-88d3-4924-913c-e214cd581765',
         name: 'product 4',
         status: 'available',
-        dateCreated: '11.06.20',
-        dateModified: '12.06.20',
+        dateCreated: '2020-06-01T12:18:29.208+0000',
+        dateModified: '2020-06-01T12:18:29.208+0000',
       },
       {
-        id: 'prd5',
-        subId: 'sub1',
-        orgId: 'org5',
+        id: 'b6d03cca-2774-453d-bd02-704e2ba2fa12',
+        subId: 'e97a48eb-3fc3-4826-b638-dfb0b178eaaf',
+        orgId: '1abf90d8-63cb-476d-a87c-c7ce2f8e4163',
         name: 'product 5',
         status: 'available',
-        dateCreated: '11.06.20',
-        dateModified: '12.06.20',
+        dateCreated: '2020-06-01T12:18:29.208+0000',
+        dateModified: '2020-06-01T12:18:29.208+0000',
       },
       {
-        id: 'prd6',
-        subId: 'sub1',
-        orgId: 'org5',
+        id: '8b2125c4-f97e-41ac-b0e6-a64498f3b032',
+        subId: 'e97a48eb-3fc3-4826-b638-dfb0b178eaaf',
+        orgId: '1abf90d8-63cb-476d-a87c-c7ce2f8e4163',
         name: 'product 6',
         status: 'available',
-        dateCreated: '11.06.20',
-        dateModified: '12.06.20',
+        dateCreated: '2020-06-01T12:18:29.208+0000',
+        dateModified: '2020-06-01T12:18:29.208+0000',
       },
       {
-        id: 'prd7',
-        subId: 'sub2',
-        orgId: 'org3',
+        id: 'bf3e092b-b0ea-4f93-96e0-940aa5baa27a',
+        subId: '60a82ad3-d1b9-4a49-b6a4-cbce5105280a',
+        orgId: '1e55b13b-908b-4fc5-b1a9-28b96adfdd4b',
         name: 'product 7',
         status: 'available',
-        dateCreated: '11.06.20',
-        dateModified: '12.06.20',
+        dateCreated: '2020-06-01T12:18:29.208+0000',
+        dateModified: '2020-06-01T12:18:29.208+0000',
       },
       {
-        id: 'prd8',
-        subId: 'sub1',
-        orgId: 'org5',
+        id: 'a1eedd11-b0b1-45c5-8570-7fdfa7701993',
+        subId: 'e97a48eb-3fc3-4826-b638-dfb0b178eaaf',
+        orgId: '1abf90d8-63cb-476d-a87c-c7ce2f8e4163',
         name: 'product 8',
         status: 'available',
-        dateCreated: '11.06.20',
-        dateModified: '12.06.20',
+        dateCreated: '2020-06-01T12:18:29.208+0000',
+        dateModified: '2020-06-01T12:18:29.208+0000',
       },
       {
-        id: 'prd9',
-        subId: 'sub1',
-        orgId: 'org4',
+        id: '004506e7-14dd-4786-87e4-36d65c91b92d',
+        subId: 'e97a48eb-3fc3-4826-b638-dfb0b178eaaf',
+        orgId: 'b3dc3fc6-13ec-48cd-b587-4f96cf1a0bca',
         name: 'product 9',
         status: 'available',
-        dateCreated: '11.06.20',
-        dateModified: '12.06.20',
+        dateCreated: '2020-06-01T12:18:29.208+0000',
+        dateModified: '2020-06-01T12:18:29.208+0000',
       }
     ]
   };
-  private static subState: Subject<string> = new Subject<string>();
-  private static orgState: Subject<string> = new Subject<string>();
 
   public static get storeEntity(): Store {
     return this.store;
-  }
-
-  public static setSubState(newState: string): void {
-    this.subState.next(newState);
-  }
-
-  public static getSubState(): Observable<string> {
-    return this.subState.asObservable();
-  }
-
-  public static setOrgState(newState: string): void {
-    this.orgState.next(newState);
-  }
-
-  public static getOrgState(): Observable<string> {
-    return this.orgState.asObservable();
   }
 }
