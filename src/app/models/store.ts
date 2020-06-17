@@ -1,9 +1,9 @@
 import { Organization } from './organizations';
 import { Product } from './product';
-import { ISubscription } from './subscription';
+import { Group } from './group';
 
 export interface Store {
-  subscriptions: ISubscription[];
+  groups: Group[];
   organizations: Organization[];
   products: Product[];
 }
