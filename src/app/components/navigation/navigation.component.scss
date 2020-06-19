@@ -1,0 +1,13 @@
+.main-navigation {
+  display: flex;
+  flex-direction: column;
+
+  &__link {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &__link + &__link {
+    margin-top: 15px;
+  }
+}
