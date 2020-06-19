@@ -8,11 +8,15 @@ import { OrganizationsModule } from './modules/organizations/organizations.modul
 import { GroupsService } from './services/groups/groups.service';
 import { FormsModule } from '@angular/forms';
 import { GroupsSwitcherComponent } from './modules/groups/groups-switcher/groups-switcher.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GroupsSwitcherComponent
+    GroupsSwitcherComponent,
+    SidebarComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,19 @@
+.main-navigation {
+  display: flex;
+  flex-direction: column;
+
+  &__link {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+  }
+
+  &__link + &__link {
+    margin-top: 15px;
+  }
+}
+
+.active.main-navigation__link {
+  color: red;
+}
