@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { MockComponent } from 'ng-mocks';
 
 import { SidebarComponent } from './sidebar.component';
+import { NavigationComponent } from '../navigation/navigation.component';
 
 describe('SidebarComponent', () => {
   let component: SidebarComponent;
@@ -9,8 +10,10 @@ describe('SidebarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SidebarComponent ],
-      schemas: [ NO_ERRORS_SCHEMA ]
+      declarations: [ 
+        SidebarComponent,
+        MockComponent(NavigationComponent) 
+      ]
     })
     .compileComponents();
   }));
