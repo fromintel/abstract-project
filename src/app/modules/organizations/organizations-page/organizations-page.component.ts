@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { AddOrganizationFormComponent } from 'src/app/components/add-organization-form/add-organization-form.component';
 
 @Component({
   selector: 'app-organizations-page',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrganizationsPageComponent implements OnInit {
 
-  constructor() { }
+  bsModalRef: BsModalRef;
 
-  ngOnInit(): void {}
+  constructor(private modalService: BsModalService) { }
+
+  ngOnInit(): void { }
+
+  openCreateOrganizationModal() {
+    this.bsModalRef = this.modalService.show(AddOrganizationFormComponent);
+  }
 }

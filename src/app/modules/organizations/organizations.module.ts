@@ -4,6 +4,7 @@ import { OrganizationsPageComponent } from "./organizations-page/organizations-p
 import { OrganizationsService } from "../../services/organizations/organizations.service";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { Routes, RouterModule } from "@angular/router";
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 const routes: Routes = [{ path: "", component: OrganizationsPageComponent }];
 
@@ -13,7 +14,8 @@ const routes: Routes = [{ path: "", component: OrganizationsPageComponent }];
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    [RouterModule.forChild(routes)]
+    [RouterModule.forChild(routes)],
+    ModalModule.forRoot(),
   ],
   exports: [OrganizationsPageComponent],
   providers: [OrganizationsService]
