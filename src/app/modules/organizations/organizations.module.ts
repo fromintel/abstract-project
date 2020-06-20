@@ -4,11 +4,12 @@ import { OrganizationsPageComponent } from "./organizations-page/organizations-p
 import { OrganizationsService } from "../../services/organizations/organizations.service";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { Routes, RouterModule } from "@angular/router";
+import { TrayComponent } from './tray/tray.component';
 
 const routes: Routes = [{ path: "", component: OrganizationsPageComponent }];
 
 @NgModule({
-  declarations: [OrganizationsPageComponent],
+  declarations: [OrganizationsPageComponent, TrayComponent],
   imports: [
     CommonModule,
     FormsModule,

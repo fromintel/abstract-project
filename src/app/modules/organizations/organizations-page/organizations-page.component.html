@@ -1,1 +1,18 @@
 <p>Organizations-page</p>
+<table>
+  <thead>
+    <th>
+      Name
+    </th>
+    <th>
+      Status
+    </th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let organization of organizations" (click)="onClick(organization)">
+      <td>{{organization.name}}</td>
+      <td>{{organization.status}}</td>
+    </tr>
+  </tbody>
+</table>
+<app-tray *ngIf="isTrayActive" [organization]="organization"></app-tray>

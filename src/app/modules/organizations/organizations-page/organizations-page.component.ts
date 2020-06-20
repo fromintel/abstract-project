@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { OrganizationsService } from 'src/app/services/organizations/organizations.service';
+import { Organization } from 'src/app/models/organizations';
 
 @Component({
   selector: 'app-organizations-page',
@@ -7,7 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrganizationsPageComponent implements OnInit {
 
-  constructor() { }
+  public organizations: Organization[];
+  public isTrayActive: boolean;
 
-  ngOnInit(): void {}
+  @Output() organization: Organization;
+
+  constructor(private organizationService: OrganizationsService ) {
+    this.organizations = [];
+    this.isTrayActive = false;
+   }
+
+  ngOnInit(): void {
+    this.organizationService.getAll().subscribe(organizations => {
+      this.organizations = organizations;
+    })
+
+  }
+
+  onClick(organization: Organization){
+    this.isTrayActive = true;
+    this.organization = organization;
+  }
 }
