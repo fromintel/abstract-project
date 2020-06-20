@@ -9,10 +9,13 @@
     </th>
   </thead>
   <tbody>
-    <tr *ngFor="let organization of organizations" (click)="onClick(organization)">
+    <tr *ngFor="let organization of organizations" (click)="onOpenTray(organization)">
       <td>{{organization.name}}</td>
       <td>{{organization.status}}</td>
     </tr>
   </tbody>
 </table>
-<app-tray *ngIf="isTrayActive" [organization]="organization"></app-tray>
+<app-tray *ngIf="isTrayActive" 
+[organization]="organization"
+ [onCloseTray]="onCloseTray.bind(this)" 
+ [onDeleteOrganization] ="onDeleteOrganization.bind(this)"></app-tray>

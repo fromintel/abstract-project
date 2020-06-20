@@ -9,12 +9,15 @@ import { Organization } from 'src/app/models/organizations';
 export class TrayComponent implements OnInit {
 
   @Input() organization: Organization;
+  @Input() onCloseTray: Function;
+  @Input() onDeleteOrganization: Function;
 
   constructor() { }
 
   ngOnInit() {
-    debugger;
-    this.organization
+    
   }
+
+
 
 }
