@@ -15,5 +15,4 @@ export class GroupsService {
     const group = AppStore.storeEntity.groups.find((g: Group) => g.id === id);
     return of<Group>(group).pipe(delay(500));
   }
-
 }

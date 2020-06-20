@@ -1,19 +1,20 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { OrganizationsPageComponent } from "./organizations-page/organizations-page.component";
-import { OrganizationsService } from "../../services/organizations/organizations.service";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { Routes, RouterModule } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { OrganizationsPageComponent } from './organizations-page/organizations-page.component';
+import { OrganizationsService } from '../../services/organizations/organizations.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+import { PreloaderComponent } from './preloader/preloader.component';
 
-const routes: Routes = [{ path: "", component: OrganizationsPageComponent }];
+const routes: Routes = [{ path: '', component: OrganizationsPageComponent }];
 
 @NgModule({
-  declarations: [OrganizationsPageComponent],
+  declarations: [OrganizationsPageComponent, PreloaderComponent],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    [RouterModule.forChild(routes)]
+    [RouterModule.forChild(routes)],
   ],
   exports: [OrganizationsPageComponent],
   providers: [OrganizationsService]

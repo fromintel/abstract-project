@@ -1,0 +1,60 @@
+.organizations {
+  padding: 10px;
+
+  &__title {
+    margin: 0 0 15px 0;
+    padding: 0;
+  }
+
+  &__table {
+    width: 800px;
+    margin: 10px 0 0;
+    border: 1px solid black;
+    box-sizing: border-box;
+  }
+
+  &__table-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+    border-bottom: 1px solid black;
+
+    span {
+      font-size: 20px;
+      font-weight: 800;
+    }
+  }
+
+  &__body {
+    height: 500px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #eaeaea;
+    }
+  }
+
+  &__empty-list {
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+  }
+}
