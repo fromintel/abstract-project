@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { GroupsSwitcherComponent } from './modules/groups/groups-switcher/groups-switcher.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     AppRoutingModule,
     ProductsModule,
     OrganizationsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    BsDropdownModule.forRoot()
   ],
   providers: [GroupsService],
   bootstrap: [AppComponent]

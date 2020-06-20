@@ -1,1 +1,25 @@
-<p>groups-switcher works!</p>
+<div class="btn-group" dropdown>
+    <button id="button-basic" 
+            dropdownToggle type="button" 
+            class="btn btn-primary dropdown-toggle"
+            aria-controls="dropdown-basic">
+        {{ groupsName }}
+      <span class="caret"></span>
+    </button>
+    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+        role="menu" aria-labelledby="button-basic">
+        <li role="menuitem" 
+            (click)='showCurrentGroup($event)' 
+            *ngFor='let group of groups'
+        >
+            <a class="dropdown-item"> 
+                {{group.name}} 
+            </a>
+        </li>
+        <li role="menuitem" (click)='showCurrentGroup($event)'>
+          <a class="dropdown-item">
+              All Groups
+          </a>
+        </li>
+    </ul>
+  </div>
