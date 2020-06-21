@@ -1,7 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MockComponent } from 'ng-mocks';
 import { OrganizationsPageComponent } from './organizations-page.component';
-import {OrganizationsTableComponent} from '../../../components/organizations-table/organizations-table.component';
+import {AppTableComponent} from '../../shared/app-table/app-table.component';
+import {OrganizationsService} from '../../../services/organizations/organizations.service';
+import {OrganizationsServiceStub} from '../../../services/stubs/organization.service.stub';
 
 
 describe('OrganizationsPageComponent', () => {
@@ -12,8 +14,12 @@ describe('OrganizationsPageComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         OrganizationsPageComponent,
-        MockComponent(OrganizationsTableComponent),
-      ]
+        MockComponent(AppTableComponent),
+      ],
+      providers: [ {
+        provide: OrganizationsService,
+        useClass: OrganizationsServiceStub
+      } ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(OrganizationsPageComponent);

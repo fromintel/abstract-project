@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from 'rxjs';
+import {Organization} from '../../../models/organizations';
+import {OrganizationsService} from '../../../services/organizations/organizations.service';
 
 @Component({
   selector: 'app-organizations-page',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrganizationsPageComponent implements OnInit {
 
-  constructor() { }
+  organizations$: Observable<Organization[]>;
 
-  ngOnInit(): void {}
+  constructor(private organizationsService: OrganizationsService) { }
+
+  ngOnInit(): void {
+    this.organizations$ = this.organizationsService.getAll();
+  }
 }
