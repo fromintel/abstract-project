@@ -32,12 +32,10 @@ export class OrganizationsPageComponent implements OnInit {
 
  
   public onCloseTray() {
-    debugger;
     this.isTrayActive = false;
   }
 
   public onDeleteOrganization(id: string){
-    debugger;
     const index = this.organizations.findIndex(org => org.id === id)
     if(index != -1){
       this.organizations.splice(index, 1)
