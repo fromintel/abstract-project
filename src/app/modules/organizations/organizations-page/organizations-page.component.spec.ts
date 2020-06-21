@@ -5,6 +5,7 @@ import { PreloaderComponent } from '../preloader/preloader.component';
 import { OrganizationsServiceStub } from '../../../services/stubs/organization.service.stub';
 import {OrganizationsService} from '../../../services/organizations/organizations.service';
 
+
 describe('OrganizationsPageComponent', () => {
   let component: OrganizationsPageComponent;
   let fixture: ComponentFixture<OrganizationsPageComponent>;
