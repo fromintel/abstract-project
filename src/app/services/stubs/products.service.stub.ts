@@ -1,9 +1,7 @@
 import { Observable, of } from 'rxjs';
 import { Product } from 'src/app/models/product';
-import { ProductsService } from '../products/products.service';
 
-
-export class ProductsServiceStub extends ProductsService {
+export class ProductsServiceStub {
 
   public getAll(): Observable<Product[]> {
     return of([]);
