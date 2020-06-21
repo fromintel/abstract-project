@@ -22,5 +22,4 @@ export class OrganizationsService {
     const organizations = AppStore.storeEntity.organizations.filter((org: Organization) => org.groupId === id);
     return of<Organization[]>(organizations).pipe(delay(500));
   }
-
 }

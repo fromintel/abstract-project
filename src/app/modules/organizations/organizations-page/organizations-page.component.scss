@@ -25,6 +25,18 @@
     }
   }
 
+  button {
+    margin: 0;
+    padding: 5px 10px;
+    border: 1px solid #2b2e30;
+    border-radius: 3px;
+    background-color: lightskyblue;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   &__body {
     height: 500px;
   }

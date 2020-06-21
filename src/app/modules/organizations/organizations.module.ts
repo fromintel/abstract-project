@@ -5,7 +5,6 @@ import { OrganizationsService } from '../../services/organizations/organizations
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { PreloaderComponent } from './preloader/preloader.component';
-import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 const routes: Routes = [{ path: '', component: OrganizationsPageComponent }];
 
@@ -16,7 +15,6 @@ const routes: Routes = [{ path: '', component: OrganizationsPageComponent }];
     FormsModule,
     ReactiveFormsModule,
     [RouterModule.forChild(routes)],
-    [ButtonsModule.forRoot()]
   ],
   exports: [OrganizationsPageComponent],
   providers: [OrganizationsService]
