@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MockComponent } from 'ng-mocks';
 import { AppTableComponent } from './app-table.component';
-import { PreloaderComponent} from '../../../components/preloader/preloader.component';
+import {PreloaderComponent} from '../preloader/preloader.component';
 
 describe('AppTableComponent', () => {
   let component: AppTableComponent;

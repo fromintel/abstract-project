@@ -4,8 +4,8 @@ import { OrganizationsPageComponent } from './organizations-page/organizations-p
 import { OrganizationsService } from '../../services/organizations/organizations.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import { PreloaderComponent } from '../../components/preloader/preloader.component';
 import { AppTableComponent } from '../shared/app-table/app-table.component';
+import { PreloaderComponent } from '../shared/preloader/preloader.component';
 
 const routes: Routes = [{ path: '', component: OrganizationsPageComponent }];
 
