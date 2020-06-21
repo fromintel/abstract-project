@@ -1,0 +1,34 @@
+<div class="organizations-table">
+  <div class="organizations-table__header">
+    <span>Name</span>
+    <span>Status</span>
+  </div>
+
+  <div class="organizations-table__body">
+
+    <div *ngIf="organizations$ | async as organizations;else preloader">
+
+      <div *ngIf="organizations.length; else button">
+        <div *ngIf="organizations.length; else button">
+          <ul class="organizations-table__list">
+            <li *ngFor="let item of organizations"
+                class="organizations-table__item">
+              <span>{{item.name}}</span>
+              <span>{{item.status}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <ng-template #button>
+        <div class="organizations-table__empty-list">
+          <button class="button" type="button">Create organization</button>
+        </div>
+      </ng-template>
+    </div>
+
+    <ng-template #preloader>
+      <app-preloader></app-preloader>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+.organizations-table {
+  width: 800px;
+  margin: 10px 0 0;
+  border: 1px solid black;
+  box-sizing: border-box;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+    border-bottom: 1px solid black;
+
+    span {
+      font-size: 20px;
+      font-weight: 800;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #eaeaea;
+    }
+  }
+
+  button {
+    margin: 0;
+    padding: 5px 10px;
+    border: 1px solid #2b2e30;
+    border-radius: 3px;
+    background-color: lightskyblue;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

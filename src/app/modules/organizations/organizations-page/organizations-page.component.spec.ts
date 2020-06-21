@@ -1,9 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MockComponent } from 'ng-mocks';
 import { OrganizationsPageComponent } from './organizations-page.component';
-import { PreloaderComponent } from '../preloader/preloader.component';
-import { OrganizationsServiceStub } from '../../../services/stubs/organization.service.stub';
-import {OrganizationsService} from '../../../services/organizations/organizations.service';
+import {OrganizationsTableComponent} from '../../../components/organizations-table/organizations-table.component';
 
 
 describe('OrganizationsPageComponent', () => {
@@ -14,15 +12,13 @@ describe('OrganizationsPageComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         OrganizationsPageComponent,
-        MockComponent(PreloaderComponent) ],
-      providers: [ {
-        provide: OrganizationsService,
-        useClass: OrganizationsServiceStub
-      } ]
-    });
+        MockComponent(OrganizationsTableComponent),
+      ]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(OrganizationsPageComponent);
     component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should create', () => {

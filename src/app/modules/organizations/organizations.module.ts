@@ -4,12 +4,13 @@ import { OrganizationsPageComponent } from './organizations-page/organizations-p
 import { OrganizationsService } from '../../services/organizations/organizations.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import { PreloaderComponent } from './preloader/preloader.component';
+import { OrganizationsTableComponent } from '../../components/organizations-table/organizations-table.component';
+import { PreloaderComponent } from '../../components/preloader/preloader.component';
 
 const routes: Routes = [{ path: '', component: OrganizationsPageComponent }];
 
 @NgModule({
-  declarations: [OrganizationsPageComponent, PreloaderComponent],
+  declarations: [OrganizationsPageComponent, PreloaderComponent, OrganizationsTableComponent],
   imports: [
     CommonModule,
     FormsModule,

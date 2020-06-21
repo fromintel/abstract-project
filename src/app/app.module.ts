@@ -17,7 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     GroupsSwitcherComponent,
     SidebarComponent,
-    NavigationComponent
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
