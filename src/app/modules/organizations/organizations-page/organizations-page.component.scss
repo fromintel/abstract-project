@@ -1,8 +1,24 @@
 .organizations {
-  padding: 10px;
+  padding: 20px;
+  width: 60vw;
+  height: calc(100vh - 24px);
+  border: 2px solid black;
 
   &__title {
     margin: 0 0 15px 0;
     padding: 0;
+  }
+}
+
+.button {
+  margin: 20px;
+  padding: 10px 15px;
+  border-radius: 3px;
+  border: 1px solid #24304e;
+  background-color: rgba(5, 32, 100, 0.39);
+  color: #ffffff;
+
+  &:hover {
+    opacity: 0.7;
   }
 }

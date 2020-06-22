@@ -4,6 +4,7 @@ import { OrganizationsPageComponent } from './organizations-page.component';
 import {AppTableComponent} from '../../shared/app-table/app-table.component';
 import {OrganizationsService} from '../../../services/organizations/organizations.service';
 import {OrganizationsServiceStub} from '../../../services/stubs/organization.service.stub';
+import {PreloaderComponent} from '../../shared/preloader/preloader.component';
 
 
 describe('OrganizationsPageComponent', () => {
@@ -15,6 +16,7 @@ describe('OrganizationsPageComponent', () => {
       declarations: [
         OrganizationsPageComponent,
         MockComponent(AppTableComponent),
+        MockComponent(PreloaderComponent)
       ],
       providers: [ {
         provide: OrganizationsService,

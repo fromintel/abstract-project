@@ -1,7 +1,15 @@
 <div class="organizations">
   <h2 class="organizations__title">Organizations</h2>
 
-  // Create organization button
+  // Add organization button
 
-  <app-table [data]="organizations$" [itemName]="'organization'"></app-table>
+  <div *ngIf="isData; else loader">
+    <app-table [data]="data">
+      <button class="button" type="button">Create organization</button>
+    </app-table>
+  </div>
+
+  <ng-template #loader>
+    <app-preloader></app-preloader>
+  </ng-template>
 </div>

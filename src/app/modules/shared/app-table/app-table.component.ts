@@ -1,18 +1,20 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
-import {Organization} from '../../../models/organizations';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-table',
   templateUrl: './app-table.component.html',
   styleUrls: ['./app-table.component.scss']
 })
-export class AppTableComponent implements OnInit {
+export class AppTableComponent implements OnChanges {
 
-  @Input() data: Observable<Organization[]>;
-  @Input() itemName: string;
+  @Input() data: <T>() => T[];
+  isData = true;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {}
+  ngOnChanges(changes: SimpleChanges): void {
+    if (!changes.data.currentValue.length) {
+      this.isData = false;
+    }
+  }
 }
