@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Observable, Subscription} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 import {Organization} from '../../../models/organizations';
 import {OrganizationsService} from '../../../services/organizations/organizations.service';
-import {Product} from '../../../models/product';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-organizations-page',
@@ -12,22 +12,23 @@ import {Product} from '../../../models/product';
 
 export class OrganizationsPageComponent implements OnInit, OnDestroy {
 
-  organizations$: Observable<Organization[]>;
+  destroy$: Subject<boolean> = new Subject<boolean>();
   data: Organization[];
-  sub: Subscription;
-  isData = false;
+  isDataLoaded = false;
 
   constructor(private organizationsService: OrganizationsService) { }
 
   ngOnInit(): void {
-    this.organizations$ = this.organizationsService.getAll();
-    this.sub = this.organizations$.subscribe(res => {
-      this.data = res;
-      this.isData = true;
-    });
+    this.organizationsService.getAll()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(res => {
+        this.data = res;
+        this.isDataLoaded = true;
+      });
   }
 
   ngOnDestroy(): void {
-    this.sub.unsubscribe();
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
   }
 }

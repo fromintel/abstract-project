@@ -3,10 +3,14 @@
 
   // Add organization button
 
-  <div *ngIf="isData; else loader">
-    <app-table [data]="data">
+  <div *ngIf="isDataLoaded; else loader">
+    <div *ngIf="data.length; else button">
+      <app-table [data]="data"></app-table>
+    </div>
+
+    <ng-template #button>
       <button class="button" type="button">Create organization</button>
-    </app-table>
+    </ng-template>
   </div>
 
   <ng-template #loader>

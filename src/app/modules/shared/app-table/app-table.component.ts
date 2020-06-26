@@ -1,20 +1,12 @@
-import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-table',
   templateUrl: './app-table.component.html',
   styleUrls: ['./app-table.component.scss']
 })
-export class AppTableComponent implements OnChanges {
-
-  @Input() data: <T>() => T[];
-  isData = true;
+export class AppTableComponent<T> {
+  @Input() data: T[];
 
   constructor() {}
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (!changes.data.currentValue.length) {
-      this.isData = false;
-    }
-  }
 }
