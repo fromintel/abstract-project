@@ -18,12 +18,10 @@ export class TrayComponent implements OnInit {
   }
 
   close() {
-    debugger;
     this.onClose.emit(null);
   }
 
   delete() {
-    debugger;
     this.onDelete.emit(this.data.id);
   }
 }

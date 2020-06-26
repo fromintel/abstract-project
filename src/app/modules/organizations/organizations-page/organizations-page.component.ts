@@ -43,7 +43,6 @@ export class OrganizationsPageComponent implements OnInit, OnDestroy {
   }
 
   public onCloseTray() {
-    debugger;
     this.isTrayActive = false;
   }
 
