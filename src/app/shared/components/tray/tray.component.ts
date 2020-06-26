@@ -1,30 +1,38 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
-  selector: 'app-tray',
-  templateUrl: './tray.component.html',
-  styleUrls: ['./tray.component.scss']
+  selector: "app-tray",
+  templateUrl: "./tray.component.html",
+  styleUrls: ["./tray.component.scss"],
 })
 export class TrayComponent implements OnInit {
-  @Input() data: any;
-  @Output() onClose = new EventEmitter();
-  @Output() onDelete = new EventEmitter();
+  @Input() data: TrayData;
+  @Output() onClose: EventEmitter<null>;
+  @Output() onDelete: EventEmitter<string>;
 
   ngOnInit(): void {
 
   }
 
   constructor() {
+    this.onClose = new EventEmitter();
+    this.onDelete = new EventEmitter();
   }
 
-  close(){
+  close() {
     debugger;
-    this.onClose.emit(null)
+    this.onClose.emit(null);
   }
 
-  delete(){
-    debugger
-    this.onDelete.emit(this.data.id)
+  delete() {
+    debugger;
+    this.onDelete.emit(this.data.id);
   }
+}
 
+export interface TrayData{
+  id: string;
+  name: string;
+  status: string;
+  label: string;
 }

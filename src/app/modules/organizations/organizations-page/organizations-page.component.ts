@@ -3,6 +3,7 @@ import { OrganizationsService } from "src/app/services/organizations/organizatio
 import { Organization } from "src/app/models/organizations";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
+import { TrayData } from 'src/app/shared/components/tray/tray.component';
 
 @Component({
   selector: "app-organizations-page",
@@ -31,6 +32,11 @@ export class OrganizationsPageComponent implements OnInit, OnDestroy {
       });
   }
 
+  ngOnDestroy(){
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
   onOpenTray(organization: Organization) {
     this.isTrayActive = true;
     this.organization = organization;
@@ -49,9 +55,14 @@ export class OrganizationsPageComponent implements OnInit, OnDestroy {
     this.isTrayActive = false;
   }
 
-  ngOnDestroy(){
-    this.destroy$.next();
-    this.destroy$.complete();
+  mapOrganizationToTrayData(organization: Organization){
+    const trayData = {
+      id: organization.id,
+      name: organization.name,
+      status: organization.status,
+      label: 'Organization'
+    } as TrayData;
+    return trayData;
   }
 
 }
