@@ -4,17 +4,18 @@ import { OrganizationsPageComponent } from "./organizations-page/organizations-p
 import { OrganizationsService } from "../../services/organizations/organizations.service";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { Routes, RouterModule } from "@angular/router";
-import { TrayComponent } from './tray/tray.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const routes: Routes = [{ path: "", component: OrganizationsPageComponent }];
 
 @NgModule({
-  declarations: [OrganizationsPageComponent, TrayComponent],
+  declarations: [OrganizationsPageComponent],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    [RouterModule.forChild(routes)]
+    [RouterModule.forChild(routes)],
+    SharedModule,
   ],
   exports: [OrganizationsPageComponent],
   providers: [OrganizationsService]

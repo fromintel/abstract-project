@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, OnDestroy } from "@angular/core";
 import { OrganizationsService } from "src/app/services/organizations/organizations.service";
 import { Organization } from "src/app/models/organizations";
-import { EventEmitter } from "protractor";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 
@@ -38,10 +37,11 @@ export class OrganizationsPageComponent implements OnInit, OnDestroy {
   }
 
   public onCloseTray() {
+    debugger
     this.isTrayActive = false;
   }
 
-  public onDeleteOrganization(id: string) {
+  public onDeleteOrganization(id: string) {;
     const index = this.organizations.findIndex((org) => org.id === id);
     if (index != -1) {
       this.organizations.splice(index, 1);

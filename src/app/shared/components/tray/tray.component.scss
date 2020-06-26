@@ -10,7 +10,7 @@
   box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
   border-radius: 3px;
 
-  .organization-name {
+  .name {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0 0 40px;
     text-align: center;
@@ -22,8 +22,8 @@
     padding: 5px 10px;
   }
 
-  .organization-status,
-  .organization-id{
+  .status,
+  .id{
     margin: 0;
     padding: 5px 10px;
     font-style: italic;

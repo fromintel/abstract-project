@@ -1,0 +1,15 @@
+<div  class="tray-wrapper" *ngIf="data">
+  <div class="info">
+   <h1 class="name">
+     {{data.name}}
+   </h1>
+   <h3 class="status-title">Status</h3>
+   <p class="status">{{data.status}}</p>
+   <h3 class="id-title"> ID</h3>
+   <p class="id">{{data.id}}</p>
+  </div>
+ <div class="btn-container">
+   <button class="btn btn-close base-btn" (click)="close()">Close</button>
+   <button class="btn btn-delete base-btn" (click)="delete()">Delete</button>
+ </div>
+ </div>

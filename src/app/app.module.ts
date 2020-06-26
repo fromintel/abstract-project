@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { GroupsSwitcherComponent } from './modules/groups/groups-switcher/groups-switcher.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+// import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     AppRoutingModule,
     ProductsModule,
     OrganizationsModule,
-    FormsModule
+    FormsModule,
+    // SharedModule
   ],
   providers: [GroupsService],
   bootstrap: [AppComponent]
