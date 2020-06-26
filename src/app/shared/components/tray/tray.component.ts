@@ -10,9 +10,7 @@ export class TrayComponent implements OnInit {
   @Output() onClose: EventEmitter<null>;
   @Output() onDelete: EventEmitter<string>;
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   constructor() {
     this.onClose = new EventEmitter();
@@ -30,7 +28,7 @@ export class TrayComponent implements OnInit {
   }
 }
 
-export interface TrayData{
+export interface TrayData {
   id: string;
   name: string;
   status: string;

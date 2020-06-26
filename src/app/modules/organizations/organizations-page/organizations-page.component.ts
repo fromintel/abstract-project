@@ -3,7 +3,7 @@ import { OrganizationsService } from "src/app/services/organizations/organizatio
 import { Organization } from "src/app/models/organizations";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
-import { TrayData } from 'src/app/shared/components/tray/tray.component';
+import { TrayData } from "src/app/shared/components/tray/tray.component";
 
 @Component({
   selector: "app-organizations-page",
@@ -32,7 +32,7 @@ export class OrganizationsPageComponent implements OnInit, OnDestroy {
       });
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
   }
@@ -43,11 +43,11 @@ export class OrganizationsPageComponent implements OnInit, OnDestroy {
   }
 
   public onCloseTray() {
-    debugger
+    debugger;
     this.isTrayActive = false;
   }
 
-  public onDeleteOrganization(id: string) {;
+  public onDeleteOrganization(id: string) {
     const index = this.organizations.findIndex((org) => org.id === id);
     if (index != -1) {
       this.organizations.splice(index, 1);
@@ -55,14 +55,13 @@ export class OrganizationsPageComponent implements OnInit, OnDestroy {
     this.isTrayActive = false;
   }
 
-  mapOrganizationToTrayData(organization: Organization){
+  mapOrganizationToTrayData(organization: Organization) {
     const trayData = {
       id: organization.id,
       name: organization.name,
       status: organization.status,
-      label: 'Organization'
+      label: "Organization",
     } as TrayData;
     return trayData;
   }
-
 }

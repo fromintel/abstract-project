@@ -1,21 +1,21 @@
 <div class="wrapper">
   <p>Organizations-page</p>
-<table>
-  <thead>
-    <th>
-      Name
-    </th>
-    <th>
-      Status
-    </th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let organization of organizations" (click)="onOpenTray(organization)">
-      <td>{{organization.name}}</td>
-      <td>{{organization.status}}</td>
-    </tr>
-  </tbody>
-</table>
-<app-tray *ngIf="isTrayActive" [data]="mapOrganizationToTrayData(organization)" (onClose) = "onCloseTray($event)"
-  (onDelete)="onDeleteOrganization($event)"></app-tray>
+  <table>
+    <thead>
+      <th>
+        Name
+      </th>
+      <th>
+        Status
+      </th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let organization of organizations" (click)="onOpenTray(organization)">
+        <td>{{organization.name}}</td>
+        <td>{{organization.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <app-tray *ngIf="isTrayActive" [data]="mapOrganizationToTrayData(organization)" (onClose)="onCloseTray($event)"
+    (onDelete)="onDeleteOrganization($event)"></app-tray>
 </div>
