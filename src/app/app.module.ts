@@ -11,7 +11,6 @@ import { GroupsSwitcherComponent } from './modules/groups/groups-switcher/groups
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { ModalModule } from 'ngx-bootstrap';
-import { AddOrganizationFormComponent } from './components/add-organization-form/add-organization-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,6 @@ import { AddOrganizationFormComponent } from './components/add-organization-form
     GroupsSwitcherComponent,
     SidebarComponent,
     NavigationComponent,
-    AddOrganizationFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,9 +26,8 @@ import { AddOrganizationFormComponent } from './components/add-organization-form
     OrganizationsModule,
     FormsModule,
     ReactiveFormsModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
   ],
-  entryComponents: [AddOrganizationFormComponent],
   providers: [GroupsService],
   bootstrap: [AppComponent]
 })

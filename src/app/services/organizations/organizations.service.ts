@@ -3,6 +3,7 @@ import { Organization } from '../../models/organizations';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { AppStore } from '../../store/app-store';
+import * as uuid from 'uuid';
 
 @Injectable()
 export class OrganizationsService {
@@ -13,9 +14,14 @@ export class OrganizationsService {
     return of<Organization[]>(AppStore.storeEntity.organizations).pipe(delay(800));
   }
 
-  public create(organization: Organization): Observable<void> {
-    AppStore.storeEntity.organizations.push(organization);
-    return of<void>().pipe(delay(300));
+  public create(organization: Organization): Observable<string> {
+    const organizationWithId = {
+      ...organization,
+      id: uuid.v4(),
+    }
+
+    AppStore.storeEntity.organizations.push(organizationWithId);
+    return of<string>('success').pipe(delay(300));
   }
 
   public getByGroupId(id: string): Observable<Organization[]> {
