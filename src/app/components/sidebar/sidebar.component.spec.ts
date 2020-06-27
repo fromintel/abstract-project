@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockComponent } from 'ng-mocks';
 
 import { SidebarComponent } from './sidebar.component';
+import { NavigationComponent } from '../navigation/navigation.component';
 
 describe('SidebarComponent', () => {
   let component: SidebarComponent;
@@ -8,7 +10,10 @@ describe('SidebarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SidebarComponent ]
+      declarations: [ 
+        SidebarComponent,
+        MockComponent(NavigationComponent) 
+      ]
     })
     .compileComponents();
   }));
