@@ -56,7 +56,7 @@ export class AddOrganizationFormComponent implements OnInit {
     };
 
     this.organizationService
-    .create(newOrganization)
+    .addOrg(newOrganization)
     .pipe(takeUntil(this.destroy$))
     .subscribe(
       () => {
@@ -64,7 +64,7 @@ export class AddOrganizationFormComponent implements OnInit {
         setTimeout(() => {
           this.bsModalRef.hide()
           //TODO: add an emit to refresh organization table
-          console.log(this.organizationService.getAll())
+          console.log(this.organizationService.getOrganizations())
         }, 3000);
       },
       (error) => {
