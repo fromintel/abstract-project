@@ -1,0 +1,46 @@
+<form
+  class="addOrganizationForm"
+  [formGroup]="addOrganizationForm"
+  (ngSubmit)="addOrganizationFormSubmit()"
+>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Add organization</h4>
+    <button
+      type="button"
+      class="close pull-right"
+      aria-label="Close"
+      (click)="bsModalRef.hide()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <tabset type="pills" class="addOrganizationForm__tabs">
+      <tab heading="Name">
+        <label for="organization-name" class="addOrganizationForm__label"
+          >Organization name</label
+        >
+        <input
+          type="text"
+          name="organization-name"
+          required
+          formControlName="name"
+        />
+      </tab>
+      <tab heading="Type">
+        <label for="organization-group" class="addOrganizationForm__label"
+          >Organization group</label
+        >
+        <select name="organization-group" formControlName="groupId">
+          <option [value]="group.id" *ngFor="let group of groups">{{
+            group.name
+          }}</option>
+        </select>
+      </tab>
+    </tabset>
+  </div>
+  <span *ngIf='isSubmitSuccess'>Organization added!</span>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-default">Add</button>
+  </div>
+</form>
