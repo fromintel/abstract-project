@@ -20,6 +20,7 @@ const routes: Routes = [{ path: "", component: OrganizationsPageComponent }];
     ReactiveFormsModule,
     [RouterModule.forChild(routes)],
     TabsModule.forRoot(),
+    ReactiveFormsModule
   ],
   exports: [OrganizationsPageComponent],
   entryComponents: [AddOrganizationFormComponent],

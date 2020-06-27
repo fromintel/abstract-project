@@ -10,22 +10,23 @@ export class OrganizationsService {
 
   constructor() {}
 
-  public getAll(): Observable<Organization[]> {
+  public getOrganizations(): Observable<Organization[]> {
     return of<Organization[]>(AppStore.storeEntity.organizations).pipe(delay(800));
   }
 
-  public create(organization: Organization): Observable<string> {
-    const organizationWithId = {
-      ...organization,
+  public addOrg(org: Organization): Observable<Organization[]> {
+    const orgWithId = {
+      ...org,
       id: uuid.v4(),
     }
 
-    AppStore.storeEntity.organizations.push(organizationWithId);
-    return of<string>('success').pipe(delay(300));
+    AppStore.storeEntity.organizations.push(orgWithId);
+
+    return of<Organization[]>(AppStore.storeEntity.organizations).pipe(delay(300),);
   }
 
-  public getByGroupId(id: string): Observable<Organization[]> {
-    const organizations = AppStore.storeEntity.organizations.filter((org: Organization) => org.groupId === id);
+  public getOrganizationsBySubId(subId: string): Observable<Organization[]> {
+    const organizations = AppStore.storeEntity.organizations.filter((org: Organization) => org.subId === subId);
     return of<Organization[]>(organizations).pipe(delay(500));
   }
 
