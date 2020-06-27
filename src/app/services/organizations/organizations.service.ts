@@ -21,12 +21,12 @@ export class OrganizationsService {
     }
 
     AppStore.storeEntity.organizations.push(orgWithId);
-
     return of<Organization[]>(AppStore.storeEntity.organizations).pipe(delay(300),);
   }
 
-  public getOrganizationsBySubId(subId: string): Observable<Organization[]> {
-    const organizations = AppStore.storeEntity.organizations.filter((org: Organization) => org.subId === subId);
+  public getOrganizationsBySubId(groupId: string): Observable<Organization[]> {
+    const organizations = AppStore.storeEntity.organizations.filter((org: Organization) => org.groupId === groupId);
+    
     return of<Organization[]>(organizations).pipe(delay(500));
   }
 
