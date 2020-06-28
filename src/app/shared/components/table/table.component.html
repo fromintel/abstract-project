@@ -1,0 +1,14 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th *ngFor="let title of tableData[0] | keyvalue">
+				{{title.key | titlecase}}
+			</th>				
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let data of tableData">
+			<td *ngFor="let item of data | keyvalue">{{item.value}}</td>
+		</tr>
+	</tbody>
+</table>
