@@ -1,1 +1,7 @@
-<p>Products-page</p>
+<ng-container *ngIf="products.length; else loading">
+	<app-table [tableData]="products"></app-table>	
+</ng-container>
+
+<ng-template #loading>
+	<p>Loading....</p>
+</ng-template>

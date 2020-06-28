@@ -8,7 +8,7 @@
 	</thead>
 	<tbody>
 		<tr *ngFor="let data of tableData">
-			<td *ngFor="let item of data | keyvalue">{{item.value}}</td>
+			<td *ngFor="let item of data | keyvalue">{{item.value | titlecase}}</td>
 		</tr>
 	</tbody>
 </table>
