@@ -10,13 +10,15 @@ import { FormsModule } from '@angular/forms';
 import { GroupsSwitcherComponent } from './modules/groups/groups-switcher/groups-switcher.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { AddProductFormComponent } from './components/add-product-form/add-product-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GroupsSwitcherComponent,
     SidebarComponent,
-    NavigationComponent
+    NavigationComponent,
+    AddProductFormComponent
   ],
   imports: [
     BrowserModule,
