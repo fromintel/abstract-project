@@ -9,5 +9,5 @@ export class OrganizationsPageComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }
