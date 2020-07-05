@@ -1,16 +1,24 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ProductsPageComponent } from './products-page.component';
+import { ProductsPageComponent } from "./products-page.component";
+import { BsModalService } from "ngx-bootstrap/modal";
 
-describe('ProductsPageComponent', () => {
+describe("ProductsPageComponent", () => {
   let component: ProductsPageComponent;
   let fixture: ComponentFixture<ProductsPageComponent>;
 
+  class BsModalServiceStub {}
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductsPageComponent ]
-    })
-    .compileComponents();
+      declarations: [ProductsPageComponent],
+      providers: [
+        {
+          provide: BsModalService,
+          useClass: BsModalServiceStub
+        }
+      ]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +27,7 @@ describe('ProductsPageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
