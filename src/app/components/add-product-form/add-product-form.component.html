@@ -1,1 +1,54 @@
-<p>add-product-form works!</p>
+<form
+  class="add-product-form form"
+  [formGroup]="addProductForm"
+  (ngSubmit)="submit()"
+>
+  <div class="form__inner">
+    <div class="form__content-section">
+      <div class="form__header">
+        <p class="form__title">Add product</p>
+      </div>
+    </div>
+    <div class="form__content-section">
+      <div class="form__body">
+        <div class="form__body-item">
+          <label for="product-name" class="form__label">Product name</label>
+          <input
+            class="form__control"
+            name="product-name"
+            formControlName="productName"
+          />
+        </div>
+        <div class="form__body-item">
+          <label for="product-name" class="form__label">Organization</label>
+          <select formControlName="organizationId">
+            <option
+              [value]="organizations[i].id"
+              *ngFor="let organization of organizations; let i = index"
+            >
+              {{ organization.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form__content-section">
+      <div class="form__footer">
+        <div class="btn-group">
+          <div class="form__btn">
+            <button type="submit" class="btn btn-default">Add</button>
+          </div>
+          <div class="form__btn">
+            <button
+              type="button"
+              class="btn btn-default"
+              (click)="handleCloseForm()"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

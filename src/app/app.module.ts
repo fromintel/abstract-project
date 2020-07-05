@@ -6,7 +6,7 @@ import { AppComponent } from "./app.component";
 import { ProductsModule } from "./modules/products/products.module";
 import { OrganizationsModule } from "./modules/organizations/organizations.module";
 import { GroupsService } from "./services/groups/groups.service";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { GroupsSwitcherComponent } from "./modules/groups/groups-switcher/groups-switcher.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { NavigationComponent } from "./components/navigation/navigation.component";
@@ -29,6 +29,7 @@ import { ModalModule } from "ngx-bootstrap/modal";
     ProductsModule,
     OrganizationsModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     ModalModule.forRoot()
   ],

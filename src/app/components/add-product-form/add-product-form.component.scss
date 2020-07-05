@@ -1,0 +1,25 @@
+.form {
+  padding: 25px;
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+  &__content-section + &__content-section {
+    margin-top: 20px;
+  }
+  &__body-item + &__body-item {
+    margin-top: 15px;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 17px;
+  }
+  &__btn + &__btn {
+    margin-left: 10px;
+  }
+  &__title {
+    margin: 0;
+  }
+}
