@@ -72,11 +72,11 @@ export class AddProductFormComponent implements OnInit, OnDestroy {
       .subscribe();
   }
 
-  handleCloseForm(): void {
+  public handleCloseForm(): void {
     this.bsModalRef.hide();
   }
 
-  submit(): void {
+  public submit(): void {
     const formValues: AddProductFormValue = this.addProductForm.value;
     const newProduct: Product = this.createNewProduct(formValues);
     this.updateProductsInStore(newProduct);
