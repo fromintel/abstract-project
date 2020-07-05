@@ -14,7 +14,7 @@ export class ProductsPageComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  handleOpenAddProductForm(): void {
+  public handleOpenAddProductForm(): void {
     this.bsModalRef = this.modalService.show(AddProductFormComponent);
   }
 }
