@@ -7,7 +7,7 @@ import {
 } from "@angular/forms";
 import { AddProductFormComponent } from "./add-product-form.component";
 import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
-import { OrganizationsServiceStub } from "../../services/stubs/organization.service.stub";
+import { OrganizationsServiceStub } from "../../../services/stubs/organization.service.stub";
 import { OrganizationsService } from "src/app/services/organizations/organizations.service";
 import { ProductsService } from "src/app/services/products/products.service";
 import { ProductsServiceStub } from "src/app/services/stubs/products.service.stub";

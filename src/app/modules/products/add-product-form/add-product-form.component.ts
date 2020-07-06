@@ -18,6 +18,9 @@ export class AddProductFormComponent implements OnInit, OnDestroy {
   private readonly destroy$: Subject<void> = new Subject<void>();
   public addProductForm: FormGroup;
   public organizations: Organization[] = [];
+  public products: Product[] = [];
+  public isProductCreatedSuccessfully: boolean = false;
+  public isNotificationShowed: boolean = false;
 
   constructor(
     public bsModalRef: BsModalRef,
@@ -66,10 +69,11 @@ export class AddProductFormComponent implements OnInit, OnDestroy {
   }
 
   private updateProductsInStore(newProduct: Product): void {
+    this.productsService.create(newProduct).pipe(takeUntil(this.destroy$));
     this.productsService
-      .create(newProduct)
+      .getAll()
       .pipe(takeUntil(this.destroy$))
-      .subscribe();
+      .subscribe((products: Product[]) => console.log(products));
   }
 
   public handleCloseForm(): void {

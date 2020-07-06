@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { GroupsSwitcherComponent } from "./modules/groups/groups-switcher/groups-switcher.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { NavigationComponent } from "./components/navigation/navigation.component";
-import { AddProductFormComponent } from "./components/add-product-form/add-product-form.component";
+import { AddProductFormComponent } from "./modules/products/add-product-form/add-product-form.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ModalModule } from "ngx-bootstrap/modal";
 
